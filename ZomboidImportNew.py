@@ -87,7 +87,7 @@ class ZomboidImport(Operator, ImportHelper):
     
 
     # Get the current scene
-    #scene = bpy.context.scene
+    #scene = context.scene
 
 #####################################################################################
 ###                                                                               ###
@@ -259,7 +259,7 @@ class ZomboidImport(Operator, ImportHelper):
             ok = True
         
         z = self.z_mesh
-        scene = bpy.context.scene
+        self.scene = bpy.context.scene
         
         z.mesh = bpy.data.meshes.new(name=z.name)
         z.mesh.from_pydata(z.vertices, z.edges, z.faces)
@@ -512,7 +512,7 @@ class ZomboidImport(Operator, ImportHelper):
         old_cursor = self.scene.cursor_location
         self.scene.cursor_location = (0.0, 0.0, 0.0)
         z = self.z_mesh
-        scene = bpy.context.scene
+        #scene = bpy.context.scene
         # The offset in the file read
         offset = 0
 

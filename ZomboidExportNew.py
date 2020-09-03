@@ -420,7 +420,7 @@ class Face:
         
         
 def menu_func_export(self, context):
-    self.layout.operator(ZomboidExport.bl_idname, text="Text Export Operator")
+    self.layout.operator(ZomboidExport.bl_idname, text="Export Project Zomboid (.txt)")
 
 def register():
     bpy.utils.register_class(ZomboidExport)
